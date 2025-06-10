@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.link {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.link:hover,
+.link:focus {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.active {
+  background: linear-gradient(135deg, #15803d, #166534);
+}

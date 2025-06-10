@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { fetchContacts } from "../redux/contacts/operations.js";
 import Error from "../components/Error/Error.jsx";
 import { selectIsLoading, selectError } from "../redux/contacts/selectors.js";
+import { ClipLoader } from "react-spinners";
 
 export default function Phonebook() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export default function Phonebook() {
 
   return (
     <div>
-      {loading && <>Loading...</>}
+      {loading && <ClipLoader color="#36d7b7" size={50} />}
       {error && <Error />}
       <ContactForm />
       <SearchBox />
