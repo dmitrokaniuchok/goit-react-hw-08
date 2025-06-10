@@ -1,31 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/auth/operations";
-import { selectUserName } from "../../redux/auth/selectors";
-import { persistor } from "../../redux/store";
+import { selectUser } from "../../redux/auth/selectors";
+import { logOut } from "../../redux/auth/operations";
 
-const UserMenu = () => {
+export default function UserMenu() {
   const dispatch = useDispatch();
-  const name = useSelector(selectUserName);
+  const user = useSelector(selectUser);
 
-  const handleLogout = () => {
-    dispatch(logout())
-      .unwrap()
-      .then(() => {
-        persistor.purge(); // ⬅️ очищаємо localStorage
-      })
-      .catch((err) => {
-        console.error("Logout failed:", err);
-      });
+  const handleLogOut = () => {
+    dispatch(logOut());
   };
 
   return (
     <div>
-      <span>Welcome, {name}</span>
-      <button type="button" onClick={handleLogout}>
+      <p>
+        Welcome, <span>{user.name}</span>
+      </p>
+      <button type="button" onClick={handleLogOut}>
         Logout
       </button>
     </div>
   );
-};
-
-export default UserMenu;
+}

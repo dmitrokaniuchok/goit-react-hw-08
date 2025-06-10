@@ -3,8 +3,8 @@ import { MdPerson, MdPhone } from "react-icons/md";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
-import { selectContacts } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contacts/operations.js";
+import { selectContacts } from "../../redux/contacts/selectors.js";
 import { toast } from "react-hot-toast";
 
 const validationSchema = Yup.object().shape({

@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
-import css from "./RegistrationForm.module.css"; // Імпортуємо CSS-модуль
+import css from "./RegistrationForm.module.css";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string().min(2, "Too short").required("Required"),
